@@ -21,6 +21,7 @@ A Python script to automatically create and manage hosts in Zabbix from Google S
 - Google Service Account with Google Sheets access
 
 ## File Structure
+
 ├── upload_hosts.py          # Main script
 ├── api-zabbix.json         # Google Service Account credentials
 ├── requirements.txt        # Python dependencies
