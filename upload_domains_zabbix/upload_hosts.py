@@ -451,7 +451,7 @@ def main():
         checked_records = 0
         deleted_records = 0
         ignored_records = 0
-        skipped_records = 0  # Thêm counter cho các record bị skip
+        skipped_records = 0  # Add counter for skipped records
         
         for i, record in enumerate(sheet_data, 1):
             print(f"\n{'='*80}")
@@ -462,7 +462,7 @@ def main():
             domain = record.get('Domains', '').strip()
             action = record.get('Action', '').strip()
             
-            # Kiểm tra domain trước tiên - nếu không có domain thì skip luôn
+            # Check domain first - if no domain then skip completely
             if not domain:
                 print(f"Skipping record {i} due to missing domain - no action will be performed")
                 skipped_records += 1
@@ -477,7 +477,7 @@ def main():
             print(f"Domain: {domain}")
             print(f"Action: {action}")
             
-            # Handle ignore action - chỉ xử lý khi có domain
+            # Handle ignore action - only process when domain exists
             if action.lower() == 'ignore':
                 print(f"  → Ignoring record {i} for domain: {domain}")
                 ignored_records += 1
@@ -544,7 +544,7 @@ def main():
         print(f"Check operations: {checked_records}")
         print(f"Delete operations: {deleted_records}")
         print(f"Ignored records: {ignored_records}")
-        print(f"Skipped records (no domain): {skipped_records}")  # Thêm thống kê skip
+        print(f"Skipped records (no domain): {skipped_records}")  # Add skip statistics
         print(f"{'='*80}")
         
     except Exception as e:
